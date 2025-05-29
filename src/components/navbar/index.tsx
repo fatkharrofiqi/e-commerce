@@ -34,7 +34,7 @@ export default function Navbar() {
       {/* Overlay */}
       <label
         htmlFor="menu-toggle"
-        className="opacity-0 -z-10 peer-checked/menu:opacity-100 peer-checked/menu:z-[1] bg-black/50 absolute inset-0 transition-opacity duration-300 cursor-pointer"
+        className="opacity-0 -z-10 peer-checked/menu:opacity-100 peer-checked/menu:z-[2] bg-black/50 absolute inset-0 transition-opacity duration-300 cursor-pointer"
       />
 
       <Logo />
@@ -50,7 +50,7 @@ export default function Navbar() {
 
       {/* Cart summary */}
       <div
-        className={`${showCart && "z-10 translate-y-0"} transform -translate-y-2 transition-transform duration-200 absolute inset-x-0 top-0 mx-1.5 rounded-lg mt-20 -z-10 bg-white divide-y-2 divide-gray-200 shadow-lg`}
+        className={`${showCart && "z-[1] translate-y-0"} transform -translate-y-2 transition-transform duration-200 absolute inset-x-0 top-0 mx-1.5 rounded-lg mt-20 -z-10 bg-white divide-y-2 divide-gray-200 shadow-lg`}
       >
         <div className="p-5">Cart</div>
         <div
