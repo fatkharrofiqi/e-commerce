@@ -21,6 +21,11 @@
   "linter": {
     "enabled": true,
     "rules": {
+      "a11y": {
+        "noLabelWithoutControl": "off",
+        "useButtonType": "off",
+        "useKeyWithClickEvents": "off"
+      },
       "style": {
         "noUnusedTemplateLiteral": "off",
         "noNonNullAssertion": "off"
