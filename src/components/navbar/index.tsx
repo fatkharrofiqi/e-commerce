@@ -4,13 +4,16 @@ import Cart from "@/components/icon/icon-cart.svg?react";
 import Delete from "@/components/icon/icon-delete.svg?react";
 import Logo from "@/components/icon/logo.svg?react";
 import { useCartStore } from "@/hooks/cart";
-import { useState } from "react";
+import { useClickOutside } from "@/hooks/click-outside";
+import { useCallback, useState } from "react";
 
 export default function Navbar() {
   const { items, removeItem } = useCartStore();
   const totalItems = items.reduce((total, item) => total + item.quantity, 0);
   const menu = ["Collections", "Men", "Women", "About", "Contact"];
   const [showCart, setShowCart] = useState(false);
+  const handleOutsideClick = useCallback(() => setShowCart(false), []);
+  const ref = useClickOutside<HTMLDivElement>(handleOutsideClick);
 
   return (
     <nav className="grid grid-cols-[auto_1fr_auto_auto] items-center gap-4 p-6 bg-white group">
@@ -50,6 +53,7 @@ export default function Navbar() {
 
       {/* Cart summary */}
       <div
+        ref={ref}
         className={`${showCart && "z-[1] translate-y-0"} transform -translate-y-2 transition-transform duration-200 absolute inset-x-0 top-0 mx-1.5 rounded-lg mt-20 -z-10 bg-white divide-y-2 divide-gray-200 shadow-lg`}
       >
         <div className="p-5">Cart</div>

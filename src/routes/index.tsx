@@ -64,7 +64,12 @@ function App() {
   return (
     <div className="flex-1 bg-white">
       <div className="relative">
-        <img src={currentImage} alt="product-item" loading="lazy" />
+        <img
+          src={currentImage}
+          alt="product-item"
+          loading="lazy"
+          className="select-none"
+        />
         <div
           onClick={handlePreviousImage}
           className="transition-all duration-100 active:-translate-y-0.5 hover:cursor-pointer bg-white active:bg-gray-300 size-10 rounded-full bg-[url('/images/icon-previous.svg')] bg-no-repeat bg-center absolute inset-0 my-auto mr-auto ml-4"
